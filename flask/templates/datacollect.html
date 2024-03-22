@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Data Collect </title>
+		<style>
+			.index{
+				margin: auto;
+				width:920px;
+				background-color: white;
+				box-shadow:10px 10px 15px black;
+				margin-top:10px;
+			}
+			input{
+				border-color: black;
+				border-top-width:0px;
+				border-right-width:0px;
+				border-bottom-width:2px;
+				border-left-width:0px;
+			}
+			#btn{
+				background-color: #FFA500;
+				color:white;
+				padding:5px 10px;
+				margin-left:320px;
+				margin-top:16px;
+				margin-bottom: 20px;
+			}
+            body {
+                background-color: gray;
+            }
+            h1 {
+                color:orange;
+                padding-top:30px;
+                text-align:center;
+            }
+		</style>
+	</head>
+	<body >
+		<div class="index">
+			<!--form title-->
+			<h1 >Data Collect</h1>
+			<hr color="orange" width="700px" />
+			<!--form start-->
+			<!--ask for name, pnumber, email and some choice question and long question-->
+			<form method="POST" action="/datacollect">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.name.label }} {{ form.name(size=20, class_='form-control') }}
+                </div>
+                <div>
+                    {{ form.pnumber.label }} {{ form.pnumber(size=20, class_='form-control') }}
+                </div>
+                <div>
+                    {{ form.email.label }} {{ form.email(size=20, class_='form-control') }}
+                </div>
+                <div>
+                    {{ form.degree.label }} {{ form.degree(class_='form-control') }}
+                </div>
+                <div>
+                    {{ form.study_feeling.label }} {{ form.study_feeling(class_='form-control') }}
+                </div>
+                <div>
+                    {{ form.grade_last_exam.label }} {{ form.grade_last_exam(class_='form-control') }}
+                </div>
+                <div>
+                    <label >{{ form.improvement.label }}</label>
+                    {% for value, label in form.improvement.choices %}
+                        <div>
+                            <input type="checkbox" id="{{ form.improvement.id }}_{{ loop.index }}" name="{{ form.improvement.name }}" value="{{ value }}">
+                            <label for="{{ form.improvement.id }}_{{ loop.index }}">{{ label }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.differences.label }} {{ form.differences(class_='form-control') }}
+                </div>
+                <div>
+                    {{ form.changes.label }} {{ form.changes(class_='form-control') }}
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+		</div>
+	</body>
+</html>
