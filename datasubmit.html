@@ -1,0 +1,17 @@
+from flask import Flask, redirect, url_for, request
+datasubmit = Flask(__name__)
+@datasubmit.route('/success/<name>')
+    def success(name):
+    return 'Thank you, %s!' %name
+
+    @datasubmit.route('/login', methods = ['POST', 'GET']) # post -> html
+    def login():
+    if request.method == 'POST':
+    user = request.form['name'] #get name -> html
+    return redirect(url_for('success', name = user))
+    else:
+    user = request.args.get('name')
+    return redirect(url_for('success', name = user))
+
+    if __name__ == '__main__':
+    datasubmit.run(debug=True)

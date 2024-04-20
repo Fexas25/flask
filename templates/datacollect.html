@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> Data Collect </title>
+		<style>
+			.index{
+				margin: auto;
+				width:920px;
+				background-color: white;
+				box-shadow:10px 10px 15px black;
+				margin-top:10px;
+			}
+			input{
+				border-color: black;
+				border-top-width:0px;
+				border-right-width:0px;
+				border-bottom-width:2px;
+				border-left-width:0px;
+			}
+			#btn{
+				background-color: #FFA500;
+				color:white;
+				padding:5px 10px;
+				margin-left:320px;
+				margin-top:16px;
+				margin-bottom: 20px;
+			}
+		</style>
+	</head>
+	<body style=" background-color: gray;">
+		<div class="index">
+			<h1 style="color:orange;padding-top:30px;text-align:center;">Data Collect</h1>
+			<hr color="orange" width="700px" />
+			<form method="post" action="http://localhost:5000/login" style="padding-left: 100px;line-height:180%;">
+                <p>NAME:</p>
+				<p><input type = "text" name = "name" value=""/></p>
+				<p>Pnumber:</p>
+				<p><input type = "text" name = "Pnumber" value=""/></p>
+				<p>Email:</p>
+				<p><input type = "text" name = "email" value=""/></p>
+				<ol>
+					<li> Which degree are you in? </li>
+					<label><input type="radio" name="education" value="1" required />&nbsp;&nbsp;Undergraduate&nbsp;&nbsp; </label>
+					<label><input type="radio" name="education" value="2" />&nbsp;&nbsp;postgraduate&nbsp;&nbsp; </label>
+					<label><input type="radio" name="education" value="3" />&nbsp;&nbsp;PhD&nbsp;&nbsp; </label>
+					<li> How did you feel your study? </li>
+					<label><input type="radio" name="age" value="1" required />&nbsp;&nbsp;very bad&nbsp;&nbsp; </label>
+					<label><input type="radio" name="age" value="2" />&nbsp;&nbsp;not good&nbsp;&nbsp; </label>
+					<label><input type="radio" name="age" value="3" />&nbsp;&nbsp;not bad&nbsp;&nbsp; </label>
+					<label><input type="radio" name="age" value="4" />&nbsp;&nbsp;very good&nbsp;&nbsp; </label>
+					<li> What is your grade last exam? </li>
+					<label><input type="radio" name="use" value="1" required />&nbsp;&nbsp;fail&nbsp;&nbsp; </label>
+					<label><input type="radio" name="use" value="2" />&nbsp;&nbsp;pass&nbsp;&nbsp; </label>
+					<label><input type="radio" name="use" value="3" />&nbsp;&nbsp;good pass&nbsp;&nbsp; </label>
+					<li> How you feel you can improve?(Multiple choice) </li>
+					<label><input type="checkbox" name="how" value="1" />&nbsp;&nbsp;Have more courses</label><br />
+					<label><input type="checkbox" name="how" value="2" />&nbsp;&nbsp;Have more self-study</label><br />
+					<label><input type="checkbox" name="how" value="3" />&nbsp;&nbsp;Have more tutors</label><br />
+					<label><input type="checkbox" name="how" value="4" />&nbsp;&nbsp;Have more sources to study</label><br />
+					<label><input type="checkbox" name="how" value="5" />&nbsp;&nbsp;Meet more skillful students</label><br />
+					<label><input type="checkbox" name="how" value="6" />&nbsp;&nbsp;Work with other students</label><br />
+					<label><input type="checkbox" name="how" value="7" />&nbsp;&nbsp;Change exam style</label><br />
+                    <li> How do you think of the differences between university and high school? </li>
+                    <textarea row="50" cols="90"></textarea>
+                    <li> What changes you can do now? </li>
+                    <textarea row="90" cols="90"></textarea>
+				</ol>
+				<p><input type = "submit" value = "submit" /></p>
+			</form>
+		</div>
+	</body>
+</html>
